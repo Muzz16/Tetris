@@ -23,7 +23,7 @@ public class MainMenuPanel extends JPanel {
 	JLabel play, exit, howToPlay;
 	BufferedImage cube;
 	BufferedImage img;
-	Clip clip;
+	static Clip clip;
 	private String highscore = "0";
 	private int currHighscore = 0;
 	private int newHighscore = 0;
@@ -43,13 +43,14 @@ public class MainMenuPanel extends JPanel {
 	public MainMenuPanel() {
 		setLayout(null);
 
+
 		try {
-			img = ImageIO.read(Board.class.getResource("/totoro.png"));
+			img = ImageIO.read(Board.class.getResourceAsStream("/Sprites/totoro.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		try {
-			cube = ImageIO.read(Board.class.getResource("/cube.png"));
+			cube = ImageIO.read(Board.class.getResourceAsStream("/Sprites/cube.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
